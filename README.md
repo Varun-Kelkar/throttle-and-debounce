@@ -8,6 +8,8 @@ Type a user name in the input below & click Add button to add a new user. The Ad
 
 To test throttle, click the Add button several times in quick succesion after typing a user name. You can see that in the next 3 secs after first click, button does not add that user again
 
+See the live demo - https://varun-kelkar.github.io/throttle-and-debounce/
+
 # Tech Stack
 - Vite
 - React
