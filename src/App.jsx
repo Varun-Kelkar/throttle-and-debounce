@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { debounce } from "./utilities/debounce";
 import { throttle } from "./utilities/throttle";
 import "./index.css";
+import "./App.css";
 export default function App() {
   const [users, setUsers] = useState([]);
   const [usersClone, setUsersClone] = useState([]);
@@ -68,32 +69,32 @@ export default function App() {
   return (
     <div className="app">
       <h1>Debounce & Throttle</h1>
-      <div>
+
+      <div className="input-group">
         <input
-          style={{ height: "2rem", width: "15rem", marginRight: "2rem" }}
+          className="input search-input"
           type="search"
           onInput={debouncedSearch}
           placeholder="Start typing to see results..."
         />
       </div>
-      <div>
-        <ul style={{ listStyle: "none" }}>
+
+      <div className="results">
+        <ul className="user-list">
           {users.map((user, index) => (
             <li key={`${user.id}-${index}`}>{user.name}</li>
           ))}
         </ul>
       </div>
-      <div>
+
+      <div className="input-group">
         <input
-          style={{ height: "2rem", width: "15rem", marginRight: "2rem" }}
+          className="input"
           type="text"
           ref={newUserRef}
           placeholder="Enter name..."
         />
-        <button
-          style={{ height: "2rem", width: "6rem" }}
-          onClick={throttledAddUser}
-        >
+        <button className="btn" onClick={throttledAddUser}>
           Add
         </button>
       </div>
